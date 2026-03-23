@@ -10,4 +10,6 @@ COPY app.py .
 
 EXPOSE 5000
 
+HEALTHCHECK CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/health')"
+
 CMD ["python", "app.py"]
