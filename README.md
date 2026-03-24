@@ -25,6 +25,11 @@ This project demonstrates a complete DevOps workflow:
 - exposing the service through Nginx reverse proxy
 - enabling HTTPS with Let's Encrypt
 
+## 📸 Screenshots
+
+### 🌐 Application
+<img src="images/app.png" width="600"/>
+
 ## Architecture
 
 ```text
