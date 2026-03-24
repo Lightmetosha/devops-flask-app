@@ -32,6 +32,7 @@ This project demonstrates a complete DevOps workflow:
 </p>
 
 ## Architecture
+<p align="center">
 <img src="images/scheme.png" width="400"/>
 </p>
 
@@ -39,10 +40,10 @@ This project demonstrates a complete DevOps workflow:
 📁 Project Structure
 .
 ├── .github/workflows/
-│   ├── ci.yml
-│   └── cd.yml
+│ ├── ci.yml
+│ └── cd.yml
 ├── templates/
-│   └── index.html
+│ └── index.html
 ├── app.py
 ├── Dockerfile
 ├── Jenkinsfile
@@ -50,32 +51,34 @@ This project demonstrates a complete DevOps workflow:
 ├── .gitignore
 └── README.md
 
-🔄 CI/CD Pipeline
+## 🔄 CI/CD Pipeline
 
-Jenkins Pipeline:
-Clones repository from GitHub
-Builds Docker image
-Stops old container
-Deploys updated container
-Verifies container status
+### Jenkins Pipeline
+- Clones repository from GitHub  
+- Builds Docker image  
+- Stops old container  
+- Deploys updated container  
+- Verifies container status  
 
-GitHub Actions:
-Triggered on push
-Builds application
-Deploys to VPS automatically
+### GitHub Actions
+- Triggered on push  
+- Builds application  
+- Deploys to VPS automatically  
 
-🐳 Docker
+---
 
-Build image:
+## 🐳 Docker
+
+### Build image
+```bash
 docker build -t my-flask-app .
 
-
-Run container:
 docker run -d -p 5000:5000 --restart always --name flask-container \
   -e APP_NAME="Lightme Number Game" \
   -e APP_ENV="production" \
   -e SECRET_KEY="change-this-secret-key" \
   my-flask-app
+
 
 🌍 Deployment
 Ubuntu VPS
@@ -87,14 +90,7 @@ curl https://lightmeserv.ru/health
 
 🧠 What I practiced
 Linux server administration
-Docker containerization🧠 What I practiced
-Linux server administration
 Docker containerization
-CI/CD pipelines (Jenkins & GitHub Actions)
-Reverse proxy configuration (Nginx)
-HTTPS setup with Certbot
-Automated deployment
-Working with VPS and SSH
 CI/CD pipelines (Jenkins & GitHub Actions)
 Reverse proxy configuration (Nginx)
 HTTPS setup with Certbot
