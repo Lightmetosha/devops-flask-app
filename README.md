@@ -37,7 +37,8 @@ This project demonstrates a complete DevOps workflow:
 </p>
 
 
-📁 Project Structure
+##📁 Project Structure
+```bash
 .
 ├── .github/workflows/
 │ ├── ci.yml
@@ -49,7 +50,7 @@ This project demonstrates a complete DevOps workflow:
 ├── Jenkinsfile
 ├── requirements.txt
 ├── .gitignore
-└── README.md
+└── README.md ```
 
 ## 🔄 CI/CD Pipeline
 
@@ -65,8 +66,6 @@ This project demonstrates a complete DevOps workflow:
 - Builds application  
 - Deploys to VPS automatically  
 
----
-
 ## 🐳 Docker
 
 ### Build image
@@ -77,23 +76,23 @@ docker run -d -p 5000:5000 --restart always --name flask-container \
   -e APP_NAME="Lightme Number Game" \
   -e APP_ENV="production" \
   -e SECRET_KEY="change-this-secret-key" \
-  my-flask-app
+  my-flask-app```
+  
 
-
-🌍 Deployment
-Ubuntu VPS
-Nginx as reverse proxy
-Domain: lightmeserv.ru
-HTTPS enabled via Let's Encrypt
+##🌍 Deployment
+- Ubuntu VPS
+- Nginx as reverse proxy
+- Domain: lightmeserv.ru
+- HTTPS enabled via Let's Encrypt
 
 curl https://lightmeserv.ru/health
 
-🧠 What I practiced
-Linux server administration
-Docker containerization
-CI/CD pipelines (Jenkins & GitHub Actions)
-Reverse proxy configuration (Nginx)
-HTTPS setup with Certbot
-Automated deployment
-Working with VPS and SSH
+##🧠 What I practiced
+- Linux server administration
+- Docker containerization
+- CI/CD pipelines (Jenkins & GitHub Actions)
+- Reverse proxy configuration (Nginx)
+- HTTPS setup with Certbot
+- Automated deployment
+- Working with VPS and SSH
 
