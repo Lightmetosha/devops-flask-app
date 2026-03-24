@@ -22,20 +22,44 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t jenkins-flask-app .'
+                sh 'docker build -t my-flask-app .'
             }
         }
 
-        stage('Show Images') {
+        stage('Stop Old Container') {
             steps {
-                sh 'docker images | head'
+                sh 'docker stop flask-container || true'
+            }
+        }
+
+        stage('Remove Old Container') {
+            steps {
+                sh 'docker rm flask-container || true'
+            }
+        }
+
+        stage('Run New Container') {
+            steps {
+                sh '''
+                docker run -d -p 5000:5000 --restart always --name flask-container \
+                  -e APP_NAME="Lightme Number Game" \
+                  -e APP_ENV="production" \
+                  -e SECRET_KEY="change-this-secret-key" \
+                  my-flask-app
+                '''
+            }
+        }
+
+        stage('Check Running Containers') {
+            steps {
+                sh 'docker ps'
             }
         }
     }
 
     post {
         success {
-            echo 'Pipeline finished successfully'
+            echo 'Pipeline finished successfully and container deployed'
         }
         failure {
             echo 'Pipeline failed'
