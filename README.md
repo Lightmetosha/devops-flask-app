@@ -1,12 +1,12 @@
-DevOps Flask App 🚀
-
-Production-like DevOps project demonstrating end-to-end deployment of a Python web application using Docker, Jenkins, GitHub Actions, Nginx, and HTTPS.
+## DevOps Flask App 🚀
 
 ![Docker](https://img.shields.io/badge/Docker-ready-blue) 
 ![Jenkins](https://img.shields.io/badge/Jenkins-pipeline-red) 
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-CI%2FCD-black) 
 ![Linux](https://img.shields.io/badge/Linux-Ubuntu-orange) 
 ![HTTPS](https://img.shields.io/badge/HTTPS-Let's_Encrypt-brightgreen)
+
+Production-like DevOps project demonstrating end-to-end deployment of a Python web application using Docker, Jenkins, GitHub Actions, Nginx, and HTTPS.
 
 ## Live Demo
 
@@ -31,13 +31,13 @@ This project demonstrates a complete DevOps workflow:
   <img src="images/app.png" width="400"/>
 </p>
 
-## Architecture
+### 🧩 Architecture
 <p align="center">
 <img src="images/scheme.png" width="400"/>
 </p>
 
 
-##📁 Project Structure
+## 📁 Project Structure
 ```bash
 .
 ├── .github/workflows/
@@ -50,7 +50,8 @@ This project demonstrates a complete DevOps workflow:
 ├── Jenkinsfile
 ├── requirements.txt
 ├── .gitignore
-└── README.md ```
+└── README.md 
+```
 
 ## 🔄 CI/CD Pipeline
 
@@ -79,7 +80,7 @@ docker run -d -p 5000:5000 --restart always --name flask-container \
   my-flask-app```
   
 
-##🌍 Deployment
+## 🌍 Deployment
 - Ubuntu VPS
 - Nginx as reverse proxy
 - Domain: lightmeserv.ru
@@ -87,7 +88,7 @@ docker run -d -p 5000:5000 --restart always --name flask-container \
 
 curl https://lightmeserv.ru/health
 
-##🧠 What I practiced
+## 🧠 What I practiced
 - Linux server administration
 - Docker containerization
 - CI/CD pipelines (Jenkins & GitHub Actions)
