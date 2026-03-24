@@ -28,7 +28,7 @@ This project demonstrates a complete DevOps workflow:
 
 ### 🌐 Application
 <p align="center">
-  <img src="images/app.png" width="700"/>
+  <img src="images/app.png" width="400"/>
 </p>
 
 ## Architecture
