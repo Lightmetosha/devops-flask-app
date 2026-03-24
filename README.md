@@ -77,7 +77,8 @@ docker run -d -p 5000:5000 --restart always --name flask-container \
   -e APP_NAME="Lightme Number Game" \
   -e APP_ENV="production" \
   -e SECRET_KEY="change-this-secret-key" \
-  my-flask-app```
+  my-flask-app
+```
   
 
 ## 🌍 Deployment
