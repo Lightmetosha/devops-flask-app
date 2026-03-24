@@ -14,21 +14,21 @@ pipeline {
             }
         }
 
-        stage('Show Branch') {
+        stage('Check Docker') {
             steps {
-                sh 'git branch || true'
+                sh 'docker --version'
             }
         }
 
-        stage('Check Python') {
+        stage('Build Docker Image') {
             steps {
-                sh 'python3 --version || true'
+                sh 'docker build -t jenkins-flask-app .'
             }
         }
 
-        stage('Show App File') {
+        stage('Show Images') {
             steps {
-                sh 'head -n 20 app.py'
+                sh 'docker images | head'
             }
         }
     }
