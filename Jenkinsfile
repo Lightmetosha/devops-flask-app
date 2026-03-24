@@ -26,15 +26,13 @@ pipeline {
             }
         }
 
-        stage('Stop Old Container') {
+        stage('Stop And Remove Old Container') {
             steps {
-                sh 'docker stop flask-container || true'
-            }
-        }
-
-        stage('Remove Old Container') {
-            steps {
-                sh 'docker rm flask-container || true'
+                sh '''
+                docker stop flask-container || true
+                sleep 2
+                docker rm -f flask-container || true
+                '''
             }
         }
 
