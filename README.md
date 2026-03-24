@@ -2,11 +2,10 @@ DevOps Flask App 🚀
 
 Production-like DevOps project demonstrating end-to-end deployment of a Python web application using Docker, Jenkins, GitHub Actions, Nginx, and HTTPS.
 
-```markdown
-![Docker](https://img.shields.io/badge/Docker-ready-blue)
-![Jenkins](https://img.shields.io/badge/Jenkins-pipeline-red)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-CI%2FCD-black)
-![Linux](https://img.shields.io/badge/Linux-Ubuntu-orange)
+![Docker](https://img.shields.io/badge/Docker-ready-blue) 
+![Jenkins](https://img.shields.io/badge/Jenkins-pipeline-red) 
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-CI%2FCD-black) 
+![Linux](https://img.shields.io/badge/Linux-Ubuntu-orange) 
 ![HTTPS](https://img.shields.io/badge/HTTPS-Let's_Encrypt-brightgreen)
 
 ## Live Demo
@@ -28,7 +27,9 @@ This project demonstrates a complete DevOps workflow:
 ## 📸 Screenshots
 
 ### 🌐 Application
-<img src="images/app.png" width="600"/>
+<p align="center">
+  <img src="images/app.png" width="700"/>
+</p>
 
 ## Architecture
 
