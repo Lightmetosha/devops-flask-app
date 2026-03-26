@@ -97,4 +97,3 @@ curl https://lightmeserv.ru/health
 - HTTPS setup with Certbot
 - Automated deployment
 - Working with VPS and SSH
-
