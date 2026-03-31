@@ -10,12 +10,15 @@ APP_NAME = os.getenv("APP_NAME", "Number Guessing Game")
 APP_ENV = os.getenv("APP_ENV", "production")
 APP_VERSION = "2.0.0"
 
+# ✅ Единая настройка начального рекорда
+DEFAULT_BEST_SCORE = 10
+
 
 def init_game():
     if "secret_number" not in session:
         session["secret_number"] = random.randint(1, 100)
         session["attempts"] = 0
-        session["best_score"] = session.get("best_score", 100)
+        session["best_score"] = session.get("best_score", DEFAULT_BEST_SCORE)
         session["message"] = ""
         session["message_type"] = "info"
 
@@ -27,7 +30,7 @@ def index():
         "index.html",
         app_name=APP_NAME,
         attempts=session.get("attempts", 0),
-        best_score=session.get("best_score", 10),
+        best_score=session.get("best_score", DEFAULT_BEST_SCORE),
         message=session.get("message", ""),
         message_type=session.get("message_type", "info")
     )
@@ -57,21 +60,24 @@ def guess():
     if guess_number < secret_number:
         session["message"] = "⬆️ Слишком мало! Попробуй больше."
         session["message_type"] = "warning"
+
     elif guess_number > secret_number:
         session["message"] = "⬇️ Слишком много! Попробуй меньше."
         session["message_type"] = "warning"
+
     else:
         attempts = session["attempts"]
-        best_score = session.get("best_score", 100)
+        best_score = session.get("best_score", DEFAULT_BEST_SCORE)
 
         if attempts < best_score:
             session["best_score"] = attempts
             session["message"] = f"🎉 Новый рекорд! Число {secret_number} угадано за {attempts} попыток."
-            session["message_type"] = "success"
         else:
             session["message"] = f"🎉 Победа! Число {secret_number} угадано за {attempts} попыток."
-            session["message_type"] = "success"
 
+        session["message_type"] = "success"
+
+        # Новая игра
         session["secret_number"] = random.randint(1, 100)
         session["attempts"] = 0
 
@@ -80,13 +86,16 @@ def guess():
 
 @app.route("/reset", methods=["POST"])
 def reset():
-    best_score = session.get("best_score", 100)
+    best_score = session.get("best_score", DEFAULT_BEST_SCORE)
+
     session.clear()
+
     session["best_score"] = best_score
     session["secret_number"] = random.randint(1, 100)
     session["attempts"] = 0
     session["message"] = "Игра сброшена. Я загадал новое число."
     session["message_type"] = "info"
+
     return redirect(url_for("index"))
 
 
