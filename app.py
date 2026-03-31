@@ -15,7 +15,7 @@ def init_game():
     if "secret_number" not in session:
         session["secret_number"] = random.randint(1, 100)
         session["attempts"] = 0
-        session["best_score"] = session.get("best_score", 100)
+        session["best_score"] = session.get("best_score", 10)
         session["message"] = ""
         session["message_type"] = "info"
 
